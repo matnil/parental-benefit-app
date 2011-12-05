@@ -1,0 +1,820 @@
+<ParentalBenefitPlan id="1">
+  <id>0</id>
+  <code>PLAN1</code>
+  <parentList id="2">
+    <Parent id="3">
+      <id>0</id>
+      <name>A</name>
+      <monthlySalary>25000</monthlySalary>
+      <sicknessBenefitDailyAmount>638</sicknessBenefitDailyAmount>
+      <minimumLevelDailyAmount>180</minimumLevelDailyAmount>
+    </Parent>
+    <Parent id="4">
+      <id>1</id>
+      <name>B</name>
+      <monthlySalary>35000</monthlySalary>
+      <sicknessBenefitDailyAmount>893</sicknessBenefitDailyAmount>
+      <minimumLevelDailyAmount>180</minimumLevelDailyAmount>
+    </Parent>
+  </parentList>
+  <monthList id="5">
+    <Month id="6">
+      <id>0</id>
+      <monthIndex>201201</monthIndex>
+    </Month>
+    <Month id="7">
+      <id>1</id>
+      <monthIndex>201202</monthIndex>
+    </Month>
+    <Month id="8">
+      <id>2</id>
+      <monthIndex>201203</monthIndex>
+    </Month>
+    <Month id="9">
+      <id>3</id>
+      <monthIndex>201204</monthIndex>
+    </Month>
+    <Month id="10">
+      <id>4</id>
+      <monthIndex>201205</monthIndex>
+    </Month>
+    <Month id="11">
+      <id>5</id>
+      <monthIndex>201206</monthIndex>
+    </Month>
+    <Month id="12">
+      <id>6</id>
+      <monthIndex>201207</monthIndex>
+    </Month>
+    <Month id="13">
+      <id>7</id>
+      <monthIndex>201208</monthIndex>
+    </Month>
+    <Month id="14">
+      <id>8</id>
+      <monthIndex>201209</monthIndex>
+    </Month>
+    <Month id="15">
+      <id>9</id>
+      <monthIndex>201210</monthIndex>
+    </Month>
+    <Month id="16">
+      <id>10</id>
+      <monthIndex>201211</monthIndex>
+    </Month>
+    <Month id="17">
+      <id>11</id>
+      <monthIndex>201212</monthIndex>
+    </Month>
+    <Month id="18">
+      <id>12</id>
+      <monthIndex>201301</monthIndex>
+    </Month>
+    <Month id="19">
+      <id>13</id>
+      <monthIndex>201302</monthIndex>
+    </Month>
+    <Month id="20">
+      <id>14</id>
+      <monthIndex>201303</monthIndex>
+    </Month>
+    <Month id="21">
+      <id>15</id>
+      <monthIndex>201304</monthIndex>
+    </Month>
+    <Month id="22">
+      <id>16</id>
+      <monthIndex>201305</monthIndex>
+    </Month>
+    <Month id="23">
+      <id>17</id>
+      <monthIndex>201306</monthIndex>
+    </Month>
+    <Month id="24">
+      <id>18</id>
+      <monthIndex>201307</monthIndex>
+    </Month>
+    <Month id="25">
+      <id>19</id>
+      <monthIndex>201308</monthIndex>
+    </Month>
+    <Month id="26">
+      <id>20</id>
+      <monthIndex>201309</monthIndex>
+    </Month>
+    <Month id="27">
+      <id>21</id>
+      <monthIndex>201310</monthIndex>
+    </Month>
+    <Month id="28">
+      <id>22</id>
+      <monthIndex>201311</monthIndex>
+    </Month>
+    <Month id="29">
+      <id>23</id>
+      <monthIndex>201312</monthIndex>
+    </Month>
+    <Month id="30">
+      <id>24</id>
+      <monthIndex>201401</monthIndex>
+    </Month>
+    <Month id="31">
+      <id>25</id>
+      <monthIndex>201402</monthIndex>
+    </Month>
+    <Month id="32">
+      <id>26</id>
+      <monthIndex>201403</monthIndex>
+    </Month>
+    <Month id="33">
+      <id>27</id>
+      <monthIndex>201404</monthIndex>
+    </Month>
+    <Month id="34">
+      <id>28</id>
+      <monthIndex>201405</monthIndex>
+    </Month>
+    <Month id="35">
+      <id>29</id>
+      <monthIndex>201406</monthIndex>
+    </Month>
+    <Month id="36">
+      <id>30</id>
+      <monthIndex>201407</monthIndex>
+    </Month>
+    <Month id="37">
+      <id>31</id>
+      <monthIndex>201408</monthIndex>
+    </Month>
+    <Month id="38">
+      <id>32</id>
+      <monthIndex>201409</monthIndex>
+    </Month>
+    <Month id="39">
+      <id>33</id>
+      <monthIndex>201410</monthIndex>
+    </Month>
+    <Month id="40">
+      <id>34</id>
+      <monthIndex>201411</monthIndex>
+    </Month>
+    <Month id="41">
+      <id>35</id>
+      <monthIndex>201412</monthIndex>
+    </Month>
+  </monthList>
+  <monthPlanList id="42">
+    <MonthPlan id="43">
+      <id>0</id>
+      <month reference="6"/>
+      <parent reference="3"/>
+      <daysAtWork>31</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="44">
+      <id>1</id>
+      <month reference="6"/>
+      <parent reference="4"/>
+      <daysAtWork>0</daysAtWork>
+      <daysOnSicknessBenefit>31</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="45">
+      <id>2</id>
+      <month reference="7"/>
+      <parent reference="3"/>
+      <daysAtWork>28</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="46">
+      <id>3</id>
+      <month reference="7"/>
+      <parent reference="4"/>
+      <daysAtWork>0</daysAtWork>
+      <daysOnSicknessBenefit>28</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="47">
+      <id>4</id>
+      <month reference="8"/>
+      <parent reference="3"/>
+      <daysAtWork>31</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="48">
+      <id>5</id>
+      <month reference="8"/>
+      <parent reference="4"/>
+      <daysAtWork>0</daysAtWork>
+      <daysOnSicknessBenefit>31</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="49">
+      <id>6</id>
+      <month reference="9"/>
+      <parent reference="3"/>
+      <daysAtWork>30</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="50">
+      <id>7</id>
+      <month reference="9"/>
+      <parent reference="4"/>
+      <daysAtWork>0</daysAtWork>
+      <daysOnSicknessBenefit>30</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="51">
+      <id>8</id>
+      <month reference="10"/>
+      <parent reference="3"/>
+      <daysAtWork>31</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="52">
+      <id>9</id>
+      <month reference="10"/>
+      <parent reference="4"/>
+      <daysAtWork>0</daysAtWork>
+      <daysOnSicknessBenefit>31</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="53">
+      <id>10</id>
+      <month reference="11"/>
+      <parent reference="3"/>
+      <daysAtWork>30</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="54">
+      <id>11</id>
+      <month reference="11"/>
+      <parent reference="4"/>
+      <daysAtWork>0</daysAtWork>
+      <daysOnSicknessBenefit>30</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="55">
+      <id>12</id>
+      <month reference="12"/>
+      <parent reference="3"/>
+      <daysAtWork>0</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>31</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="56">
+      <id>13</id>
+      <month reference="12"/>
+      <parent reference="4"/>
+      <daysAtWork>31</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="57">
+      <id>14</id>
+      <month reference="13"/>
+      <parent reference="3"/>
+      <daysAtWork>0</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>31</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="58">
+      <id>15</id>
+      <month reference="13"/>
+      <parent reference="4"/>
+      <daysAtWork>31</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="59">
+      <id>16</id>
+      <month reference="14"/>
+      <parent reference="3"/>
+      <daysAtWork>0</daysAtWork>
+      <daysOnSicknessBenefit>2</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>28</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="60">
+      <id>17</id>
+      <month reference="14"/>
+      <parent reference="4"/>
+      <daysAtWork>30</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="61">
+      <id>18</id>
+      <month reference="15"/>
+      <parent reference="3"/>
+      <daysAtWork>31</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="62">
+      <id>19</id>
+      <month reference="15"/>
+      <parent reference="4"/>
+      <daysAtWork>0</daysAtWork>
+      <daysOnSicknessBenefit>31</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="63">
+      <id>20</id>
+      <month reference="16"/>
+      <parent reference="3"/>
+      <daysAtWork>30</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="64">
+      <id>21</id>
+      <month reference="16"/>
+      <parent reference="4"/>
+      <daysAtWork>0</daysAtWork>
+      <daysOnSicknessBenefit>30</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="65">
+      <id>22</id>
+      <month reference="17"/>
+      <parent reference="3"/>
+      <daysAtWork>31</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="66">
+      <id>23</id>
+      <month reference="17"/>
+      <parent reference="4"/>
+      <daysAtWork>0</daysAtWork>
+      <daysOnSicknessBenefit>31</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="67">
+      <id>24</id>
+      <month reference="18"/>
+      <parent reference="3"/>
+      <daysAtWork>31</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="68">
+      <id>25</id>
+      <month reference="18"/>
+      <parent reference="4"/>
+      <daysAtWork>0</daysAtWork>
+      <daysOnSicknessBenefit>31</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="69">
+      <id>26</id>
+      <month reference="19"/>
+      <parent reference="3"/>
+      <daysAtWork>28</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="70">
+      <id>27</id>
+      <month reference="19"/>
+      <parent reference="4"/>
+      <daysAtWork>0</daysAtWork>
+      <daysOnSicknessBenefit>26</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>2</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="71">
+      <id>28</id>
+      <month reference="20"/>
+      <parent reference="3"/>
+      <daysAtWork>0</daysAtWork>
+      <daysOnSicknessBenefit>31</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="72">
+      <id>29</id>
+      <month reference="20"/>
+      <parent reference="4"/>
+      <daysAtWork>31</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="73">
+      <id>30</id>
+      <month reference="21"/>
+      <parent reference="3"/>
+      <daysAtWork>3</daysAtWork>
+      <daysOnSicknessBenefit>27</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="74">
+      <id>31</id>
+      <month reference="21"/>
+      <parent reference="4"/>
+      <daysAtWork>30</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="75">
+      <id>32</id>
+      <month reference="22"/>
+      <parent reference="3"/>
+      <daysAtWork>31</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="76">
+      <id>33</id>
+      <month reference="22"/>
+      <parent reference="4"/>
+      <daysAtWork>31</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="77">
+      <id>34</id>
+      <month reference="23"/>
+      <parent reference="3"/>
+      <daysAtWork>30</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="78">
+      <id>35</id>
+      <month reference="23"/>
+      <parent reference="4"/>
+      <daysAtWork>30</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="79">
+      <id>36</id>
+      <month reference="24"/>
+      <parent reference="3"/>
+      <daysAtWork>31</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="80">
+      <id>37</id>
+      <month reference="24"/>
+      <parent reference="4"/>
+      <daysAtWork>31</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="81">
+      <id>38</id>
+      <month reference="25"/>
+      <parent reference="3"/>
+      <daysAtWork>31</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="82">
+      <id>39</id>
+      <month reference="25"/>
+      <parent reference="4"/>
+      <daysAtWork>31</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="83">
+      <id>40</id>
+      <month reference="26"/>
+      <parent reference="3"/>
+      <daysAtWork>30</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="84">
+      <id>41</id>
+      <month reference="26"/>
+      <parent reference="4"/>
+      <daysAtWork>30</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="85">
+      <id>42</id>
+      <month reference="27"/>
+      <parent reference="3"/>
+      <daysAtWork>31</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="86">
+      <id>43</id>
+      <month reference="27"/>
+      <parent reference="4"/>
+      <daysAtWork>31</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="87">
+      <id>44</id>
+      <month reference="28"/>
+      <parent reference="3"/>
+      <daysAtWork>30</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="88">
+      <id>45</id>
+      <month reference="28"/>
+      <parent reference="4"/>
+      <daysAtWork>30</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="89">
+      <id>46</id>
+      <month reference="29"/>
+      <parent reference="3"/>
+      <daysAtWork>31</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="90">
+      <id>47</id>
+      <month reference="29"/>
+      <parent reference="4"/>
+      <daysAtWork>31</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="91">
+      <id>48</id>
+      <month reference="30"/>
+      <parent reference="3"/>
+      <daysAtWork>31</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="92">
+      <id>49</id>
+      <month reference="30"/>
+      <parent reference="4"/>
+      <daysAtWork>31</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="93">
+      <id>50</id>
+      <month reference="31"/>
+      <parent reference="3"/>
+      <daysAtWork>28</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="94">
+      <id>51</id>
+      <month reference="31"/>
+      <parent reference="4"/>
+      <daysAtWork>28</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="95">
+      <id>52</id>
+      <month reference="32"/>
+      <parent reference="3"/>
+      <daysAtWork>31</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="96">
+      <id>53</id>
+      <month reference="32"/>
+      <parent reference="4"/>
+      <daysAtWork>31</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="97">
+      <id>54</id>
+      <month reference="33"/>
+      <parent reference="3"/>
+      <daysAtWork>30</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="98">
+      <id>55</id>
+      <month reference="33"/>
+      <parent reference="4"/>
+      <daysAtWork>30</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="99">
+      <id>56</id>
+      <month reference="34"/>
+      <parent reference="3"/>
+      <daysAtWork>31</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="100">
+      <id>57</id>
+      <month reference="34"/>
+      <parent reference="4"/>
+      <daysAtWork>31</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="101">
+      <id>58</id>
+      <month reference="35"/>
+      <parent reference="3"/>
+      <daysAtWork>30</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="102">
+      <id>59</id>
+      <month reference="35"/>
+      <parent reference="4"/>
+      <daysAtWork>30</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="103">
+      <id>60</id>
+      <month reference="36"/>
+      <parent reference="3"/>
+      <daysAtWork>31</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="104">
+      <id>61</id>
+      <month reference="36"/>
+      <parent reference="4"/>
+      <daysAtWork>31</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="105">
+      <id>62</id>
+      <month reference="37"/>
+      <parent reference="3"/>
+      <daysAtWork>31</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="106">
+      <id>63</id>
+      <month reference="37"/>
+      <parent reference="4"/>
+      <daysAtWork>31</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="107">
+      <id>64</id>
+      <month reference="38"/>
+      <parent reference="3"/>
+      <daysAtWork>30</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="108">
+      <id>65</id>
+      <month reference="38"/>
+      <parent reference="4"/>
+      <daysAtWork>30</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="109">
+      <id>66</id>
+      <month reference="39"/>
+      <parent reference="3"/>
+      <daysAtWork>31</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="110">
+      <id>67</id>
+      <month reference="39"/>
+      <parent reference="4"/>
+      <daysAtWork>31</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="111">
+      <id>68</id>
+      <month reference="40"/>
+      <parent reference="3"/>
+      <daysAtWork>30</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="112">
+      <id>69</id>
+      <month reference="40"/>
+      <parent reference="4"/>
+      <daysAtWork>30</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="113">
+      <id>70</id>
+      <month reference="41"/>
+      <parent reference="3"/>
+      <daysAtWork>31</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+    <MonthPlan id="114">
+      <id>71</id>
+      <month reference="41"/>
+      <parent reference="4"/>
+      <daysAtWork>31</daysAtWork>
+      <daysOnSicknessBenefit>0</daysOnSicknessBenefit>
+      <daysOnMinimumBenefit>0</daysOnMinimumBenefit>
+      <daysOnLeaveWithoutPay>0</daysOnLeaveWithoutPay>
+    </MonthPlan>
+  </monthPlanList>
+  <score class="org.drools.planner.core.score.DefaultHardAndSoftScore" id="115">
+    <hardScore>0</hardScore>
+    <softScore>6950554</softScore>
+  </score>
+</ParentalBenefitPlan>

@@ -1,0 +1,30 @@
+package org.drools.planner.examples.parentalbenefit.solver;
+
+dialect "java"
+
+import org.drools.planner.core.score.calculator.HardAndSoftConstraintScoreCalculator;
+import org.drools.planner.core.score.constraint.IntConstraintOccurrence;
+import org.drools.planner.core.score.constraint.ConstraintType;
+
+import org.drools.planner.examples.parentalbenefit.domain.Parent;
+import org.drools.planner.examples.parentalbenefit.domain.Month;
+import org.drools.planner.examples.parentalbenefit.domain.ParentalBenefitPlan;
+import org.drools.planner.examples.parentalbenefit.domain.MonthPlan;
+
+import org.drools.planner.examples.parentalbenefit.domain.solver.ParentDaysAtHomeTotal;
+
+global HardAndSoftConstraintScoreCalculator scoreCalculator;
+
+// ############################################################################
+// Mjuka villkor
+// ############################################################################
+
+rule "Favorisera en planering som ger barnet så lång tid hemma som möjligt"
+    when
+    	$parent1 : Parent( )
+    	$parent2 : Parent( id > $parent1.id )
+    	ParentDaysAtHomeTotal( parent == $parent1, $totalDaysAtHome1 : totalDaysAtHome)
+    	ParentDaysAtHomeTotal( parent == $parent2, $totalDaysAtHome2 : totalDaysAtHome)
+    then
+        insertLogical(new IntConstraintOccurrence("Favorisera lång tid hemma", ConstraintType.NEGATIVE_SOFT, - 100 * ($totalDaysAtHome1 + $totalDaysAtHome2)));
+end

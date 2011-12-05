@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<solver>
+	<!--  <environmentMode>DEBUG</environmentMode>  -->
+	<solutionClass>org.drools.planner.examples.parentalbenefit.domain.ParentalBenefitPlan</solutionClass>
+	<planningEntityClass>org.drools.planner.examples.parentalbenefit.domain.MonthPlan</planningEntityClass>
+
+	<scoreDrl>/org/drools/planner/examples/parentalbenefit/solver/core-rules.drl</scoreDrl>
+	<scoreDrl>/org/drools/planner/examples/parentalbenefit/solver/favor-large-pay.drl</scoreDrl> 
+	<!-- 
+	<scoreDrl>/org/drools/planner/examples/parentalbenefit/solver/favor-equal-split.drl</scoreDrl> 
+	<scoreDrl>/org/drools/planner/examples/parentalbenefit/solver/favor-long-time-home.drl</scoreDrl> 
+	<scoreDrl>/org/drools/planner/examples/parentalbenefit/solver/favor-large-pay.drl</scoreDrl> 
+	-->
+	
+	<scoreDefinition>
+		<scoreDefinitionType>HARD_AND_SOFT</scoreDefinitionType>
+	</scoreDefinition>
+
+	<localSearch>
+		<selector>
+			<selector>
+				<moveFactoryClass>org.drools.planner.examples.parentalbenefit.solver.move.factory.GenerateStayAtHomeWholeMonthMoveFactory</moveFactoryClass> 
+			</selector>
+			<selector>
+				<moveFactoryClass>org.drools.planner.examples.parentalbenefit.solver.move.factory.AddSicknessBenefitDaysMoveFactory</moveFactoryClass> 
+			</selector>
+			<selector>
+				<moveFactoryClass>org.drools.planner.examples.parentalbenefit.solver.move.factory.AddMinimumBenefitDaysMoveFactory</moveFactoryClass> 
+			</selector>
+			<selector>
+				<moveFactoryClass>org.drools.planner.examples.parentalbenefit.solver.move.factory.AddDaysOnLeaveWithoutPayMoveFactory</moveFactoryClass> 
+			</selector>
+			<selector>
+				<moveFactoryClass>org.drools.planner.examples.parentalbenefit.solver.move.factory.RemoveDaysOnLeaveWithoutPayMoveFactory</moveFactoryClass> 
+			</selector>
+		</selector>
+		<acceptor>
+			<completeSolutionTabuSize>10000</completeSolutionTabuSize>
+		</acceptor>
+		<forager>
+		</forager>
+		<termination>
+	        <maximumUnimprovedStepCount>10</maximumUnimprovedStepCount>
+		</termination>
+	</localSearch>
+	
+</solver>

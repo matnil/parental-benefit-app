@@ -1,0 +1,45 @@
+package org.drools.planner.examples.parentalbenefit.solver;
+
+dialect "java"
+
+import org.drools.planner.core.score.calculator.HardAndSoftConstraintScoreCalculator;
+import org.drools.planner.core.score.constraint.IntConstraintOccurrence;
+import org.drools.planner.core.score.constraint.ConstraintType;
+
+import org.drools.planner.examples.parentalbenefit.domain.Parent;
+import org.drools.planner.examples.parentalbenefit.domain.Month;
+import org.drools.planner.examples.parentalbenefit.domain.ParentalBenefitPlan;
+import org.drools.planner.examples.parentalbenefit.domain.MonthPlan;
+
+import org.drools.planner.examples.parentalbenefit.domain.solver.ParentDaysAtHomeTotal;
+
+global HardAndSoftConstraintScoreCalculator scoreCalculator;
+
+// ############################################################################
+// Mjuka villkor
+// ############################################################################
+
+rule "Favoriserar planering som ger så mycket total föräldrapenning som möjligt"
+    when
+        $totalSicknessLevelBenefit : Number() from accumulate(
+        	MonthPlan($sicknessLevelBenefit : sicknessLevelBenefit),
+            sum($sicknessLevelBenefit)
+        )
+        $totalMinimumLevelBenefit : Number() from accumulate(
+        	MonthPlan($minimumLevelBenefit : minimumLevelBenefit),
+            sum($minimumLevelBenefit)
+        )
+        $totalPay : Number() from accumulate(
+        	MonthPlan($totalMonthlyPay : totalPay),
+            sum($totalMonthlyPay)
+        )
+    then
+    	// Prioritera lägstanivå-ersättning (annars sparas de dagarna till slutet)
+    	// Om två planer ger lika hög ersättning, favorisera den som gör högst total inkomst
+    	insertLogical(
+    		new IntConstraintOccurrence("Favoriserar hög total föräldrapenning", 
+    									ConstraintType.NEGATIVE_SOFT,
+    									-100 * $totalMinimumLevelBenefit.intValue() 
+    									- 10 * $totalSicknessLevelBenefit.intValue()
+    									- $totalPay.intValue()));
+end

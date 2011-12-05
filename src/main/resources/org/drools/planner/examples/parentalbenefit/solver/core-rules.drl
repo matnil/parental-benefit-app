@@ -1,0 +1,182 @@
+package org.drools.planner.examples.parentalbenefit.solver;
+
+dialect "java"
+
+import org.drools.planner.core.score.calculator.HardAndSoftConstraintScoreCalculator;
+import org.drools.planner.core.score.constraint.IntConstraintOccurrence;
+import org.drools.planner.core.score.constraint.ConstraintType;
+
+import org.drools.planner.examples.parentalbenefit.domain.Parent;
+import org.drools.planner.examples.parentalbenefit.domain.Month;
+import org.drools.planner.examples.parentalbenefit.domain.ParentalBenefitPlan;
+import org.drools.planner.examples.parentalbenefit.domain.MonthPlan;
+import org.drools.planner.examples.parentalbenefit.domain.Settings;
+
+import org.drools.planner.examples.parentalbenefit.domain.solver.ParentDaysAtHomeTotal;
+
+global HardAndSoftConstraintScoreCalculator scoreCalculator;
+
+// ############################################################################
+// Beräkna härledda värden
+// ############################################################################
+
+rule "Beräkna föräldrapennings-belopp"
+    when
+		$parent : Parent( minimumLevelDailyAmount == 0, $monthlySalary : monthlySalary )
+	then
+	    // Sjukpenninggrundande inkomst (SGI)
+    	int sicknessBenefitQualifyingAnnualIncome = Math.min(12 * $monthlySalary, 428000);
+		modify ( $parent ) {
+			setSicknessBenefitDailyAmount(Math.round(sicknessBenefitQualifyingAnnualIncome * 0.97f * 0.8f / 365)),
+			setMinimumLevelDailyAmount(180)
+		}
+end
+
+rule "Beräkna totalt antal dagar hemma per förälder"
+    when
+    	$parent : Parent()
+        $totalDaysOnSicknessBenefit : Number() from accumulate(
+        	MonthPlan(parent == $parent, $daysOnSicknessBenefit : daysOnSicknessBenefit),
+            sum($daysOnSicknessBenefit)
+        )
+        $totalDaysOnMinimumBenefit : Number() from accumulate(
+        	MonthPlan(parent == $parent, $daysOnMinimumBenefit : daysOnMinimumBenefit),
+            sum($daysOnMinimumBenefit)
+        )
+        $totalDaysOnLeaveWithoutPay : Number() from accumulate(
+        	MonthPlan(parent == $parent, $daysOnLeaveWithoutPay : daysOnLeaveWithoutPay),
+            sum($daysOnLeaveWithoutPay)
+        )
+    then
+	    ParentDaysAtHomeTotal total = new ParentDaysAtHomeTotal($parent, $totalDaysOnSicknessBenefit.intValue(), $totalDaysOnMinimumBenefit.intValue(), $totalDaysOnLeaveWithoutPay.intValue());
+    	insertLogical(total);
+end
+
+// ############################################################################
+// Hårda villkor
+// ############################################################################
+
+rule "Föräldrarna får gemensamt använda max 390 sjuknivådagar"
+    when
+        $total1 : ParentDaysAtHomeTotal( $daysOnSicknessBenefit1 : daysOnSicknessBenefit )
+	    ParentDaysAtHomeTotal(this != $total1, $daysOnSicknessBenefit2 : daysOnSicknessBenefit > (390 - $daysOnSicknessBenefit1) )
+    then
+        insertLogical(new IntConstraintOccurrence("För många sjukpenningnivå-dagar", ConstraintType.NEGATIVE_HARD, 1));
+        insertLogical(new IntConstraintOccurrence("För många sjukpenningnivå-dagar (soft)", ConstraintType.NEGATIVE_SOFT, 10 * ($daysOnSicknessBenefit1 + $daysOnSicknessBenefit2 - 390)));
+end
+
+rule "Föräldrarna får gemensamt använda max 90 lägstanivådagar"
+    when
+        $total1 : ParentDaysAtHomeTotal( $daysOnMinimumBenefit1 : daysOnMinimumBenefit )
+	    ParentDaysAtHomeTotal(this != $total1, $daysOnMinimumBenefit2 : daysOnMinimumBenefit > (90 - $daysOnMinimumBenefit1) )
+    then
+        insertLogical(new IntConstraintOccurrence("För många lägstanivå-dagar", ConstraintType.NEGATIVE_HARD, 1));
+        insertLogical(new IntConstraintOccurrence("För många lägstanivå-dagar (soft)", ConstraintType.NEGATIVE_SOFT, 10 * ($daysOnMinimumBenefit1 + $daysOnMinimumBenefit2 - 90)));
+end
+
+rule "Barnets period hemma ska vara sammanhängande"
+    when
+    	MonthPlan( $month : month, $parent1 : parent, $daysOnLeave1 : totalDaysOnLeave )
+    	MonthPlan( month == $month, parent != $parent1, $daysOnLeave2 : totalDaysOnLeave )
+    	Month( this == $month, $monthId : id, numberOfDays > ($daysOnLeave1 + $daysOnLeave2) )
+    	$nextMonth : Month( id == ($monthId + 1) )
+    	exists MonthPlan( month == $nextMonth, atHomeDuringMonth )
+    then
+        insertLogical(new IntConstraintOccurrence("Barnets period hemma ska vara sammanhängande", ConstraintType.NEGATIVE_HARD, 1, $month));
+end
+
+rule "Föräldrarnas gemensamma föräldraledighet under en månad kan inte vara mer än antal dagar i månaden"
+    when
+    	MonthPlan( $month : month, $parent1 : parent, $daysOnLeave1 : totalDaysOnLeave )
+    	MonthPlan( month == $month, parent != $parent1, $daysOnLeave2 : totalDaysOnLeave )
+    	Month( this == $month, numberOfDays < ($daysOnLeave1 + $daysOnLeave2) )
+    then
+        insertLogical(new IntConstraintOccurrence("Ledighet kan inte vara mer än antal dagar i månaden", ConstraintType.NEGATIVE_HARD, 1, $month));
+end
+
+rule "När barnet fyllt 1 år, ta ut minst fem dagar ersättning per vecka för att inte försämra sjukpenning"
+    when
+    	$month : Month( id >= 12 )
+    	MonthPlan( month == $month, $totalPayedDays : totalPayedDays < 22 )
+    then
+        insertLogical(new IntConstraintOccurrence("Undvik försämrad sjukpenning", ConstraintType.NEGATIVE_HARD, 1, $month));
+        insertLogical(new IntConstraintOccurrence("Undvik försämrad sjukpenning (soft)", ConstraintType.NEGATIVE_SOFT, 2 * (22 - $totalPayedDays), $month));
+end
+
+rule "Lägsta nivå-dagar får bara användas efter att minst 180 dagar på sjukpenning-nivå använts"
+    when
+    	$month : Month( $monthid : id  ) 
+    	MonthPlan( month == $month, daysOnMinimumBenefit > 0 ) 
+        $accumulatedDaysOnSicknessBenefit : Number( intValue < 180 ) from accumulate(
+        	MonthPlan(month.id <= $monthid, $daysOnSicknessBenefit : daysOnSicknessBenefit),
+            sum($daysOnSicknessBenefit)
+        )
+    then
+        insertLogical(new IntConstraintOccurrence("Första 180 dagar med ersättning måste vara på sjukpenningnivå", ConstraintType.NEGATIVE_HARD, 1, $month));
+end
+
+rule "60 dagar (av 390) på sjukpenningsnivå är reserverade till varje förälder och går inte överföra"
+    when
+    	ParentDaysAtHomeTotal( daysOnSicknessBenefit > 330 )
+    then
+        insertLogical(new IntConstraintOccurrence("60 dagar på sjukpenningsnivå går inte överföra", ConstraintType.NEGATIVE_HARD, 1));
+end
+
+rule "Hushållets totala inkomst en viss månad får inte understiga minsta tillåtna inkomst"
+    when
+    	$month : Month( ) 
+    	monthPlan1 : MonthPlan( month == $month, $totalPay1 : totalPay )
+    	MonthPlan( month == $month, id > monthPlan1.id, $totalPay2 : totalPay )
+    	Settings( $minimumMonthlyIncome : minimumMonthlyIncome > ($totalPay1 + $totalPay2) )
+    then
+    	int diff = $minimumMonthlyIncome - $totalPay1 - $totalPay2;
+        insertLogical(new IntConstraintOccurrence("Garantera minsta tillåtna inkomst", ConstraintType.NEGATIVE_HARD, 1, $month));
+        insertLogical(new IntConstraintOccurrence("Garantera minsta tillåtna inkomst (soft)", ConstraintType.NEGATIVE_SOFT, 2 * diff, $month));
+end
+
+// ############################################################################
+// Soft constraints
+// ############################################################################
+
+rule "För sista månaden i planeringen, se till att man utnyttjar de dagar som finns kvar även om pengarna inte behövs"
+    when
+    	$monthPlan : MonthPlan( totalDaysOnLeave > 0, daysAtWork > 0 )
+        $total1 : ParentDaysAtHomeTotal( $totalDaysOnBenefit1 : totalDaysOnBenefit )
+	    ParentDaysAtHomeTotal(this != $total1, $totalDaysOnBenefit2 : totalDaysOnBenefit < (480 - $totalDaysOnBenefit1) )
+
+    then
+        insertLogical(new IntConstraintOccurrence("Utnyttja alla ersättningsdagar", ConstraintType.NEGATIVE_SOFT, (480 - $totalDaysOnBenefit1 - $totalDaysOnBenefit2), $monthPlan));
+end
+
+rule "Favorisera planering där man inte begär mer pengar än nödvändigt de månader man går hemma"
+    when
+    	$monthPlan : MonthPlan( $totalDaysOnBenefit : totalDaysOnBenefit, $daysOnSicknessBenefit : daysOnSicknessBenefit, daysAtWork == 0 )
+    then
+        insertLogical(new IntConstraintOccurrence("Favorisera plan som minimerar dagar med ersättning", ConstraintType.NEGATIVE_SOFT, $totalDaysOnBenefit + $daysOnSicknessBenefit, $monthPlan));
+end
+
+// ############################################################################
+// Mjuka villkor
+// ############################################################################
+
+rule "Beräkna totalt antal hårda villkor som bryts"
+        salience -1
+    when
+        $hardTotal : Number() from accumulate(
+            IntConstraintOccurrence(constraintType == ConstraintType.NEGATIVE_HARD, $weight : weight),
+            sum($weight)
+        )
+    then
+        scoreCalculator.setHardConstraintsBroken($hardTotal.intValue());
+end
+
+rule "Beräkna totalt antal mjuka villkor som bryts"
+        salience -1
+    when
+        $softTotal : Number() from accumulate(
+            IntConstraintOccurrence(constraintType == ConstraintType.NEGATIVE_SOFT, $weight : weight),
+            sum($weight)
+        )
+    then
+        scoreCalculator.setSoftConstraintsBroken($softTotal.intValue());
+end

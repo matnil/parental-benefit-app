@@ -1,0 +1,167 @@
+<ParentalBenefitPlan id="1">
+  <id>0</id>
+  <code>PLAN1</code>
+  <parentList id="2">
+    <Parent id="3">
+      <id>0</id>
+      <name>A</name>
+      <monthlySalary>25000</monthlySalary>
+    </Parent>
+    <Parent id="4">
+      <id>1</id>
+      <name>B</name>
+      <monthlySalary>35000</monthlySalary>
+    </Parent>
+  </parentList>
+  <monthList id="5">
+    <Month id="6">
+      <id>0</id>
+      <monthIndex>201201</monthIndex>
+    </Month>
+    <Month id="7">
+      <id>1</id>
+      <monthIndex>201202</monthIndex>
+    </Month>
+    <Month id="8">
+      <id>2</id>
+      <monthIndex>201203</monthIndex>
+    </Month>
+    <Month id="9">
+      <id>3</id>
+      <monthIndex>201204</monthIndex>
+    </Month>
+    <Month id="10">
+      <id>4</id>
+      <monthIndex>201205</monthIndex>
+    </Month>
+    <Month id="11">
+      <id>5</id>
+      <monthIndex>201206</monthIndex>
+    </Month>
+    <Month id="12">
+      <id>6</id>
+      <monthIndex>201207</monthIndex>
+    </Month>
+    <Month id="13">
+      <id>7</id>
+      <monthIndex>201208</monthIndex>
+    </Month>
+    <Month id="14">
+      <id>8</id>
+      <monthIndex>201209</monthIndex>
+    </Month>
+    <Month id="15">
+      <id>9</id>
+      <monthIndex>201210</monthIndex>
+    </Month>
+    <Month id="16">
+      <id>10</id>
+      <monthIndex>201211</monthIndex>
+    </Month>
+    <Month id="17">
+      <id>11</id>
+      <monthIndex>201212</monthIndex>
+    </Month>
+    <Month id="18">
+      <id>12</id>
+      <monthIndex>201301</monthIndex>
+    </Month>
+    <Month id="19">
+      <id>13</id>
+      <monthIndex>201302</monthIndex>
+    </Month>
+    <Month id="20">
+      <id>14</id>
+      <monthIndex>201303</monthIndex>
+    </Month>
+    <Month id="21">
+      <id>15</id>
+      <monthIndex>201304</monthIndex>
+    </Month>
+    <Month id="22">
+      <id>16</id>
+      <monthIndex>201305</monthIndex>
+    </Month>
+    <Month id="23">
+      <id>17</id>
+      <monthIndex>201306</monthIndex>
+    </Month>
+    <Month id="24">
+      <id>18</id>
+      <monthIndex>201307</monthIndex>
+    </Month>
+    <Month id="25">
+      <id>19</id>
+      <monthIndex>201308</monthIndex>
+    </Month>
+    <Month id="26">
+      <id>20</id>
+      <monthIndex>201309</monthIndex>
+    </Month>
+    <Month id="27">
+      <id>21</id>
+      <monthIndex>201310</monthIndex>
+    </Month>
+    <Month id="28">
+      <id>22</id>
+      <monthIndex>201311</monthIndex>
+    </Month>
+    <Month id="29">
+      <id>23</id>
+      <monthIndex>201312</monthIndex>
+    </Month>
+    <Month id="30">
+      <id>24</id>
+      <monthIndex>201401</monthIndex>
+    </Month>
+    <Month id="31">
+      <id>25</id>
+      <monthIndex>201402</monthIndex>
+    </Month>
+    <Month id="32">
+      <id>26</id>
+      <monthIndex>201403</monthIndex>
+    </Month>
+    <Month id="33">
+      <id>27</id>
+      <monthIndex>201404</monthIndex>
+    </Month>
+    <Month id="34">
+      <id>28</id>
+      <monthIndex>201405</monthIndex>
+    </Month>
+    <Month id="35">
+      <id>29</id>
+      <monthIndex>201406</monthIndex>
+    </Month>
+    <Month id="36">
+      <id>30</id>
+      <monthIndex>201407</monthIndex>
+    </Month>
+    <Month id="37">
+      <id>31</id>
+      <monthIndex>201408</monthIndex>
+    </Month>
+    <Month id="38">
+      <id>32</id>
+      <monthIndex>201409</monthIndex>
+    </Month>
+    <Month id="39">
+      <id>33</id>
+      <monthIndex>201410</monthIndex>
+    </Month>
+    <Month id="40">
+      <id>34</id>
+      <monthIndex>201411</monthIndex>
+    </Month>
+    <Month id="41">
+      <id>35</id>
+      <monthIndex>201412</monthIndex>
+    </Month>
+  </monthList>
+  <monthPlanList id="50">
+  </monthPlanList>
+  <settings id="51">
+    <minimumMonthlyIncome>40000</minimumMonthlyIncome>
+  </settings>
+</ParentalBenefitPlan>
